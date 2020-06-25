@@ -227,6 +227,9 @@ void TerminalUI::Screen::output(bool force)
     if (lines.empty())
         return;
 
+    if (force)
+        hashes.clear();
+
     // iTerm2 "begin synchronised update" sequence
     printf("\033P=1s\033\\");
 
